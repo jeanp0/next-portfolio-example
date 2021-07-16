@@ -36,8 +36,6 @@ const Github = ({ user }) => {
           </div>
         </div>
       </div>
-      <h1>Github</h1>
-      <h3>{name}</h3>
     </Layout>
   );
 };
