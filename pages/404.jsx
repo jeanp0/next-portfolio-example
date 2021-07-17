@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 
 const Custom404 = () => {
   return (
-    <Layout>
+    <Layout showFooter={false}>
       <div className="text-center">
         <h1>404</h1>
         <p>

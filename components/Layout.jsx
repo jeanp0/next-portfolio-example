@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import Navbar from "./Navbar";
 import nProgress from "nprogress";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title, showFooter = true, dark = false }) => {
   const router = useRouter();
 
   const handleRouteChangeStart = (url) => {
@@ -23,17 +23,26 @@ const Layout = ({ children }) => {
   }, [router]);
 
   return (
-    <>
+    <div className={dark ? "bg-dark" : ""}>
       <Navbar />
-      <main className="container py-4">{children}</main>
-      <footer className="bg-dark text-light text-center">
-        <div className="container p-4">
-          <h1>&copy; Ryan Ray Portfolio</h1>
-          <p>2000 - {new Date().getFullYear()}</p>
-          <p>All rights reserved.</p>
-        </div>
-      </footer>
-    </>
+      <main className="container py-4">
+        {title && (
+          <h1 className={dark ? "text-light text-center" : "text-center"}>
+            {title}
+          </h1>
+        )}
+        {children}
+      </main>
+      {showFooter && (
+        <footer className="bg-dark text-light text-center">
+          <div className="container p-4">
+            <h1>&copy; Ryan Ray Portfolio</h1>
+            <p>2000 - {new Date().getFullYear()}</p>
+            <p>All rights reserved.</p>
+          </div>
+        </footer>
+      )}
+    </div>
   );
 };
 

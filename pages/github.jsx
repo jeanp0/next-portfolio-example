@@ -1,10 +1,16 @@
 import Layout from "../components/Layout";
 import Image from "next/image";
+import Error from "./_error";
 
-const Github = ({ user }) => {
+const Github = ({ user, error, status }) => {
   const { name, avatar_url, bio, blog, html_url } = user;
+
+  if (error) {
+    return <Error status={status} />;
+  }
+
   return (
-    <Layout>
+    <Layout showFooter={false} dark>
       <div className="row">
         <div className="col-md-4 offset-md-4">
           <div className="card card-body text-center">
@@ -40,16 +46,16 @@ const Github = ({ user }) => {
   );
 };
 
-// backend
 export async function getServerSideProps() {
   const res = await fetch("https://api.github.com/users/jeanp0");
   const data = await res.json();
-
-  console.log(data);
+  const error = res.status > 299;
 
   return {
     props: {
       user: data,
+      error,
+      status: res.status,
     },
   };
 }

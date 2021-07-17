@@ -76,3 +76,26 @@ export const projects = [
     image: portfolioPic6,
   },
 ];
+
+export const posts = [
+  {
+    title: "React",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse alias maxime illo, asperiores ratione, eos animi expedita sed dolor repellendus perspiciatis reiciendis distinctio odit architecto deleniti quam praesentium cumque libero!",
+    imageUrl:
+      "https://blog.desafiolatam.com/wp-content/uploads/2019/04/react-galaxia.png",
+  },
+  {
+    title: "Angular",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse alias maxime illo, asperiores ratione, eos animi expedita sed dolor repellendus perspiciatis reiciendis distinctio odit architecto deleniti quam praesentium cumque libero!",
+    imageUrl:
+      "https://www.digital55.com/wp-content/uploads/2019/10/Renderizado_en_servidor_con_angular_universal.png",
+  },
+  {
+    title: "Vue",
+    content:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse alias maxime illo, asperiores ratione, eos animi expedita sed dolor repellendus perspiciatis reiciendis distinctio odit architecto deleniti quam praesentium cumque libero!",
+    imageUrl: "https://adrianalonso.es/wp-content/uploads/2018/01/vue.jpg",
+  },
+];
